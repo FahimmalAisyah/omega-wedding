@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head') %>
+    <style>
+      .single-card {
+        position: relative;
+        width: 400px;
+        margin: 15px;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        transition: box-shadow 0.3s ease;
+        overflow: hidden;
+
+        border-radius: 15px;
+        transition: all 0.8s ease-in-out;
+        font-family: Courier, monospace;
+      }
+      .single-card:hover {
+        transform: translateY(-10px);
+      }
+      .img-area {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+      }
+      .img-area img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+      .img-area:hover img {
+        transform: scale(1.1);
+      }
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(44, 49, 51, 0.8);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .single-card:hover .overlay {
+        opacity: 1;
+      }
+      .add-to-cart,
+      .view-details {
+        background-color: #fff;
+        color: #333;
+        padding: 10px 15px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        margin-bottom: 10px;
+      }
+      .add-to-cart:hover,
+      .view-details:hover {
+        /* background-color: orangered; */
+        color: #fff;
+        border: none;
+      }
+      .info {
+        padding: 10px;
+        text-align: center;
+        /* color: #ddd; */
+      }
+      .info h3 {
+        margin: 15px 0 10px;
+        font-size: 30px;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-family: "Bebas Neue", sans-serif;
+      }
+      .info .price {
+        margin: 0;
+        font-size: 30px;
+        font-weight: bold;
+        color: aqua;
+      }
+    </style>
+  </head>
+  <!-- body -->
+  <body class="main-layout inner_page">
+    <!-- loader  -->
+    <div class="loader_bg">
+      <div class="loader"><img src="/images/loading.gif" alt="#" /></div>
+    </div>
+    <!-- end loader -->
+    <!-- header -->
+    <%- include('partials/nav-paket') %>
+    <!-- end banner -->
+    <div class="back_re" style="background-color: #fff; margin-top: 50px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="title">
+              <h1 class="text-center" style="font-size: 70px">PAKET</h1>
+              <h3 class="text-center">
+                Rayakan cinta Anda dengan kemewahan dan keanggunan.
+              </h3>
+              <h3 class="text-center">
+                Paket pernikahan elegan kami mencakup dekorasi indah dan
+                pelayanan terbaik untuk hari istimewa Anda
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- paket -->
+    <div class="plane">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="titlepage">
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <% paket.forEach(product => { %>
+          <div class="single-card">
+            <div class="img-area">
+              <img src="resource/<%= product.gambar %>" alt="" />
+              <div class="overlay">
+                <a
+                  href="http://localhost:3000/detailpaket?id=<%= product.id %>"
+                  class="view-details"></a>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+    <!-- paket -->
+    <!--  footer -->
+    <footer>
+      <div class="footer">
+        <div class="copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 offset-md-2">
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- end footer -->
+    <%- include('partials/foot') %>
+  </body>
+  <script>
+    // Ambil elemen yang akan diformat
+    var priceElement = document.getElementById("price");
+
+    // Ambil harga dari teks elemen
+    var priceText = priceElement.innerText;
+
+    // Ekstrak angka dari teks
+    var price = parseInt(priceText.replace(/[^\d]/g, ""));
+
+    // Format angka sebagai mata uang
+    var formattedPrice = price.toLocaleString("id-ID", {
+      style: "currency",
+      currency: "IDR",
+    });
+
+    // Setel teks elemen dengan harga yang sudah diformat
+    priceElement.innerText = formattedPrice;
+  </script>
+</html>

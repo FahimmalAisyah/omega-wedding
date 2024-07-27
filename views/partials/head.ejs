@@ -1,0 +1,213 @@
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!-- mobile metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@400;700&display=swap"
+  rel="stylesheet"
+/>
+<!-- site metas -->
+<title>Omega</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<!-- bootstrap css -->
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<!-- style css -->
+<link rel="stylesheet" href="/css/style.css" />
+<!-- Responsive-->
+<link rel="stylesheet" href="/css/responsive.css" />
+<!-- fevicon -->
+<link rel="icon" href="images/fevicon.png" type="image/gif" />
+<!-- Scrollbar Custom CSS -->
+<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css" />
+<!-- Tweaks for older IEs-->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+  media="screen"
+/>
+<style>
+  .navbar-custom {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 5px;
+  }
+  .navbar-brand,
+  .nav-link {
+    color: white !important;
+  }
+  .nav-link {
+    font-size: 1.2rem; 
+    padding: 2px;/* Increase the font size */
+  }
+  .hero-image {
+    background-image: url("images/banner3.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+  }
+
+  .hero-image-paket {
+    background-image: url("images/banner3.jpg");
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  .hero-content-paket {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+  }
+
+  /* Add WA floating button CSS */
+  .floating {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+  }
+
+  .float-button {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border-radius: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.15rem;
+    transition: all 0.3s;
+    overflow: hidden;
+    z-index: 1;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(239, 16, 72);
+      border-radius: 10rem;
+      z-index: -2;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: darken(rgb(239, 16, 72), 15%);
+      transition: all 0.3s;
+      border-radius: 10rem;
+      z-index: -1;
+    }
+    &:hover {
+      color: #fff;
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+
+  .float-button-2 {
+    position: fixed;
+    bottom: 100px;
+    right: 40px;
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border-radius: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.15rem;
+    transition: all 0.3s;
+    overflow: hidden;
+    z-index: 1;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(66, 74, 76);
+      border-radius: 10rem;
+      z-index: -2;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: darken(#0cf, 15%);
+      transition: all 0.3s;
+      border-radius: 10rem;
+      z-index: -1;
+    }
+    &:hover {
+      color: #fff;
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+
+  .fab-icon {
+    margin-top: 16px;
+  }
+
+  body,
+  h2,
+  h1,
+  h3 {
+    font-family: "Libre Bodoni", serif;
+  }
+
+  .custom-link {
+    color: #0b0b0b;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .custom-link:hover {
+    text-decoration: underline;
+  }
+  .icon-spacing {
+    margin-right: 10px;
+  }
+
+</style>
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script
+><![endif]-->

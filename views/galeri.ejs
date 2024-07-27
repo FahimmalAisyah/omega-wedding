@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head') %>
+  </head>
+  <!-- body -->
+  <body class="main-layout inner_page">
+    <!-- loader  -->
+    <div class="loader_bg">
+      <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+    </div>
+    <!-- end loader -->
+    <!-- header -->
+    <%- include('partials/nav-paket') %>
+    <!-- end banner -->
+    <h1 class="text-center" style="font-size: 70px; margin-top: 20px">
+      GALERI
+    </h1>
+    <h3 class="text-center">
+      Beberapa Moment dan dokumentasi dalam mengabadikan Pernikahan Impian
+    </h3>
+    <h3 class="text-center">#IngatWeddingIngatOmega</h3>
+    <!-- blog -->
+    <div class="container mt-5">
+      <div class="row">
+        <% galeri.forEach(detail => { %>
+        <div class="col-md-4 mb-4">
+          <img
+            src="resource/<%= detail.gambar %>"
+            class="rounded-img"
+            alt="Image 1"
+          />
+        </div>
+        <% }); %>
+      </div>
+    </div>
+
+    <!-- end blog -->
+    <!--  footer -->
+    <footer>
+      <div class="footer">
+        <div class="copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 offset-md-2">
+                <p>
+                  © 2019 All Rights Reserved.
+                  <a href="https://html.design/"> Free Html Templates</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- end footer -->
+    <%- include('partials/foot') %>
+  </body>
+</html>

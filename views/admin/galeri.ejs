@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head') %>
+  <body class="sb-nav-fixed">
+    <%- include('partials/nav') %>
+    <div id="layoutSidenav">
+      <%- include('partials/sidebar') %>
+      <div id="layoutSidenav_content">
+        <main>
+          <div class="container-fluid px-4">
+            <h1 class="mt-4"></h1>
+            <% if (successMessage) { %>
+                <div class="alert alert-success" role="alert">
+                <%= successMessage %>
+                </div>
+            <% } %>
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    Detail Paket
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>Judul</th>
+                                <th>deskripsi</th>
+                                <th>Tanggal Post</th>
+                                <th>Gambar</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Judul</th>
+                                <th>deskripsi</th>
+                                <th>Tanggal Post</th>
+                                <th>Gambar</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <% data.forEach(product => { %>
+                            <tr>
+                                <td><%= product.judul %></td>
+                                <td><%= product.deskripsi %></td>
+                                <td><%= product.tanggal_post %></td>
+                                <td><%= product.gambar %></td>
+                                <td>
+                                    <!-- Tautan untuk mengarahkan ke formulir edit -->
+                                    <a href='/admin-galeri?id=<%= product.id %>'><i class="fas fa-edit"></i></a>
+                                    <!-- Tautan untuk menghapus produk -->
+                                    <a href="/deletegaleri/<%= product.id %>" onclick="return confirmDelete();"><i class="fas fa-trash-alt"></i></a>
+                                </td>
+                                
+                                </td>
+                            </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                    <div style="text-align: right;">
+                        <a href="galeri-edit" class="btn btn-primary">Tambah Data</a>
+                    </div>
+                    <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            <!-- Modal content -->
+                            <% if (success === 'true') { %>
+                                <p>Data Berhasil Ditambahkan atau diubah!</p>
+                            <% } else if (success === 'false') { %>
+                                <p>Data gagal ditambahkan!.</p>
+                            <% } %>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </main>
+       <%- include('partials/footer')%>
+       <script>
+        // Display modal on page load if success or error query parameter is present
+        window.addEventListener('DOMContentLoaded', (event) => {
+          const urlParams = new URLSearchParams(window.location.search);
+          const success = urlParams.get('success');
+          if (success === 'true' || success === 'false') {
+            const myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+            myModal.show();
+          }
+        });
+
+        function confirmDelete() {
+            return confirm("Apakah Anda yakin ingin menghapus detail produk?");
+          }
+        </script>
+        
+  </body>
+</html>

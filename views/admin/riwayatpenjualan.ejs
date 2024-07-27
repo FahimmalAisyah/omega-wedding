@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head') %>
+  <body class="sb-nav-fixed">
+    <%- include('partials/nav') %>
+    <div id="layoutSidenav">
+      <%- include('partials/sidebar') %>
+      <div id="layoutSidenav_content">
+        <main>
+          <div class="container-fluid px-4">
+            <h1 class="mt-4"></h1>
+            
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    Riwayat Order
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>Nama Customer</th>
+                                <th>Alamat</th>
+                                <th>Nomot Telpon Customer</th>
+                                <th>Nama Paket</th>
+                                <th>Harga</th>
+                                <th>Tanggal Acara</th>
+                                <th>Tanggal Bayar</th>
+                                <th>Tanggal Transaksi</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Nama Customer</th>
+                                <th>Nama Alamat</th>
+                                <th>Nomot Telpon Customer</th>
+                                <th>Nama Paket</th>
+                                <th>Harga</th>
+                                <th>Nama Paket</th>
+                                <th>Harga</th>
+                                <th>Tanggal Acara</th>
+                                <th>Tanggal Bayar</th>
+                                <th>Tanggal Transaksi</th>
+                                
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <% data.forEach(product => { %>
+                            <tr>
+                                <td><%= product.nama %></td>
+                                <td><%=  product.alamat %></td>
+                                <td><%=  product.nomor_telepon %></td>
+                                <td><%= product.namapaket %></td>
+                                <td><%=  product.harga %></td>
+                                <td><%= product.tanggalacara %></td>
+                                <td><%= product.tanggalbayar %></td>
+                                <td><%= product.tanggaltransaksi %></td>
+                                </td>
+                            </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+          </div>
+        </main>
+       <%- include('partials/footer')%>
+       <script>
+        function formatCurrency(amount) {
+            // Menggunakan metode toLocaleString() untuk memformat angka menjadi format mata uang
+            return amount.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' });
+        }
+        
+        
+       </script>
+  </body>
+</html>

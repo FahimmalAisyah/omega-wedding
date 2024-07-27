@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head') %>
+  <body class="sb-nav-fixed">
+    <%- include('partials/nav') %>
+    <div id="layoutSidenav">
+      <%- include('partials/sidebar') %>
+      <div id="layoutSidenav_content">
+        <main>
+          <div class="container-fluid px-4">
+            <h1 class="mt-4">Form Detail Paket</h1>
+           <!-- Produk Form -->
+           <div class="col-8">
+            <form action="/detail-produk" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<%= data.id || '' %>">
+                <div class="mb-3">
+                    <label for="namapaket" class="form-label">Nama Paket:</label>
+                    <select class="form-select" name="id_produk" id="id_produk">
+                        <% produk.forEach(product => { %>
+                          <option value="<%= product.id %>" <%= (data && data.id_produk && data.id_produk === product.id) ? 'selected' : '' %>><%= product.namapaket %></option>
+                        <% }) %>
+                      </select>
+                      
+                </div>
+                <div class="mb-3">
+                    <label for="harga" class="form-label">Kategori:</label>
+                    <select class="form-select" name="kategori" aria-label="Default select example">
+                        <option value="mua">MUA</option>
+                        <option value="photo">photografi</option>
+                        <option value="dancer">Dancer</option>
+                        <option value="entertain">Entertaiment</option>
+                        <option value="food">Food</option>
+                        <option value="dekorasi">Dekorasi</option>
+                      </select>
+                </div>
+                <div class="mb-3">
+                  <label for="namapaket" class="form-label">Keterangan:</label>
+                  <input type="text"  class="form-control" name="keterangan" id="keterangan" value="<%= data.keterangan || '' %>">
+              </div>
+              <input type="hidden" name="old_gambar" value="<%= data.gambar || '' %>">
+
+                <!-- Input file untuk mengunggah gambar baru -->
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Gambar:</label>
+                    <!-- Tambahkan event onchange untuk memeriksa jika gambar baru dipilih -->
+                    <input class="form-control" type="file" value="<%= data.gambar || '' %> %>" name="gambar" id="gambar" onchange="previewImage(event)">
+                </div>
+
+                <!-- Tag img untuk menampilkan preview gambar -->
+                <div id="imagePreview" class="mb-3">
+                    <% if (data.gambar) { %>
+                      <img src="/resource/<%= data.gambar %>" width="300" alt="Preview Gambar" style="max-width: 100%; margin-bottom: 10px;">
+                    <% } %>
+                </div>        
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="submit">Simpan</button>
+                </div>
+            </form>   
+           </div>    
+          </div>
+        </main>
+       <%- include('partials/footer')%>
+       <script>
+        // Fungsi untuk menampilkan preview gambar saat gambar baru dipilih
+        function previewImage(event) {
+            const input = event.target;
+            const preview = document.getElementById('imagePreview');
+            while (preview.firstChild) {
+                preview.removeChild(preview.firstChild);
+            }
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.style.Width = '300';
+                    img.style.marginBottom = '10px';
+                    preview.appendChild(img);
+                }
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                // Jika tidak ada file yang dipilih, tampilkan gambar lama (jika ada)
+                const oldImage = document.createElement('img');
+                const oldGambar = document.querySelector('input[name="old_gambar"]').value;
+                if (oldGambar) {
+                    oldImage.src = '/resource/' + oldGambar;
+                    oldImage.alt = 'Preview Gambar Lama';
+                    oldImage.style.Width = '300';
+                    oldImage.style.marginBottom = '10px';
+                    preview.appendChild(oldImage);
+                }
+            }
+        }
+    </script>
+  </body>
+</html>

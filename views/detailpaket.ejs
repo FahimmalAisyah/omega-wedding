@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head') %>
+    <style>
+      .transparent-yellow-box {
+        background-color: rgba(
+          255,
+          255,
+          0,
+          0.5
+        ); 
+      }
+    </style>
+  </head>
+  <!-- body -->
+  <body class="main-layout">
+    <!-- loader  -->
+    <div class="loader_bg">
+      <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+    </div>
+    <!-- end loader -->
+    <!-- header -->
+    <header class="full_bg">
+      <!-- header inner -->
+      <div class="">
+        <div class="container">
+          <div class="row">
+          </div>
+        </div>
+      </div>
+       <a
+      href="http://localhost:3000/order?id=<%= produk.id %>"
+      class="float-button-2"
+      target="_blank"
+    >
+      ORDER
+    </a>
+    
+    </header>
+    <!-- end banner -->
+    <div class="card-body">
+      <a href="/paket" class="custom-link"
+        ><i class="fas fa-arrow-left icon-spacing"></i
+      > Kembali </a>
+    </div>
+      <!-- Dekorasi -->
+    <div class="plane">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="plan_bax text_align_center">
+              <img src="resource/<%= produk.gambar2 %>" alt="#" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Dekorasi -->
+    <!-- Dekorasi -->
+    <div class="plane">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="titlepage">
+              <h2>Dekorasi</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <% detailprodukdekorasi.forEach(detail => { %>
+          <div class="col-md-12">
+            <div class="plan_bax text_align_center">
+              <img src="resource/<%= detail.gambarproduk %>" alt="#" />
+
+              <div id="ho_plan" class="plan_text">
+                <h3><%= detail.keterangan %></h3>
+                <!-- <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod t dolor in reprehenderit in voluptate
+                </p> -->
+                <!-- <a class="read_more" href="Javascript:void(0)">Read More</a> -->
+              </div>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+    <!-- Dekorasi -->
+
+    <!-- MUA -->
+    <div class="plane">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="titlepage">
+              <h2>Make Up Arts</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <% detailprodukmua.forEach(detail => { %>
+          <div class="col-md-12">
+            <div class="brid text_align_center">
+              <figure>
+                <img src="resource/<%= detail.gambarproduk %>" alt="#" />
+              </figure>
+              <h3><%= detail.keterangan %></h3>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+    <!-- MUA -->
+
+    <!-- Dancer -->
+    <div class="plane">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="titlepage">
+              <h2>Dancer</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <% detailprodukdancer.forEach(detail => { %>
+          <div class="col-md-12">
+            <div class="brid text_align_center">
+              <figure>
+                <img src="resource/<%= detail.gambarproduk %>" alt="#" />
+              </figure>
+              <h3><%= detail.keterangan %></h3>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+    <!-- Dancer -->
+
+    <!-- Photograpy -->
+    <div class="plane">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="titlepage">
+              <h2>Dokumentasi<h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <% detailprodukphoto.forEach(detail => { %>
+          <div class="col-md-12">
+            <div class="brid text_align_center">
+              <figure>
+                <img src="resource/<%= detail.gambarproduk %>" alt="#" />
+              </figure>
+              <h3><%= detail.keterangan %></h3>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+    <!-- Photograpy -->
+
+        <!-- Photograpy -->
+        <div class="plane">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="titlepage">
+                  <h2>Entertaiment<h2>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <% detailprodukentertaiment.forEach(detail => { %>
+              <div class="col-md-12">
+                <div class="brid text_align_center">
+                  <figure>
+                    <img src="resource/<%= detail.gambarproduk %>" alt="#" />
+                  </figure>
+                  <h3><%= detail.keterangan %></h3>
+                </div>
+              </div>
+              <% }); %>
+            </div>
+          </div>
+        </div>
+        <!-- Entertaiment -->
+    
+
+    <!--  footer -->
+    <footer>
+      <div class="footer">
+        <div class="copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 offset-md-2">
+                <p>
+                  © 2019 All Rights Reserved.
+                  <a href="https://html.design/"> Free Html Templates</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- end footer -->
+    <%- include('partials/foot') %>
+  </body>
+</html>

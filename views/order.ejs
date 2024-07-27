@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Omega</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+      @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700");
+
+      body {
+        background: url("http://all4desktop.com/data_images/original/4236532-background-images.jpg");
+        font-family: "Roboto Condensed", sans-serif;
+        color: #262626;
+        margin: 5% 0;
+      }
+      .mb-5 {
+        margin-bottom: 50px;
+      }
+
+      .mt-5 {
+        margin-top: 50px;
+      }
+
+      .container {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      @media (min-width: 1200px) {
+        .container {
+          max-width: 1140px;
+        }
+      }
+      .d-flex {
+        display: flex;
+        flex-direction: row;
+        background: #f6f6f6;
+        border-radius: 0 0 5px 5px;
+        padding: 25px;
+      }
+      @media (max-width: 768px) {
+        .d-flex {
+          flex-direction: column;
+        }
+      }
+      form {
+        flex: 4;
+      }
+      .Yorder {
+        flex: 2;
+      }
+      .Xorder {
+        flex: 2;
+      }
+      .title {
+        background: -webkit-gradient(
+          linear,
+          left top,
+          right bottom,
+          color-stop(0, #303334),
+          color-stop(100, #303334)
+        );
+        background-color: #303334;
+        padding: 20px;
+        color: #f6f6f6;
+        text-align: center;
+      }
+      h2 {
+        margin: 0;
+        padding-left: 15px;
+      }
+      .required {
+        color: red;
+      }
+      label,
+      table {
+        display: block;
+        margin: 15px;
+      }
+      label > span {
+        float: left;
+        width: 25%;
+        margin-top: 12px;
+        padding-right: 10px;
+      }
+      input[type="text"],
+      input[type="tel"],
+      input[type="email"] select {
+        width: 70%;
+        height: 30px;
+        padding: 5px 10px;
+        margin-bottom: 10px;
+        border: 1px solid #dadada;
+        color: #888;
+      }
+      input[type="date"] {
+        width: 72%;
+        height: 45px;
+        padding: 5px 10px;
+        margin-bottom: 10px;
+        border: 1px solid #dadada;
+        color: #888;
+        box-sizing: border-box; /* Memastikan padding tidak mempengaruhi lebar */
+      }
+      select {
+        width: 72%;
+        height: 45px;
+        padding: 5px 10px;
+        margin-bottom: 10px;
+      }
+      .Yorder {
+        margin-top: 15px;
+        height: 300px;
+        padding: 20px;
+        border: 1px solid #dadada;
+        justify-content: center;
+      }
+
+      .Xorder {
+        margin-top: 15px;
+        height: 600px;
+        padding: 20px;
+        border: 1px solid #dadada;
+        justify-content: center;
+      }
+      table {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th {
+        border-bottom: 1px solid #dadada;
+        padding: 10px 0;
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+      td:first-child {
+        white-space: nowrap; /* Mencegah teks terlalu panjang wrap*/
+      }
+      .text-right {
+        text-align: right;
+      }
+      tr > td:nth-child(1) {
+        text-align: left;
+        color: #2d2d2a;
+      }
+      tr > td:nth-child(2) {
+        text-align: right;
+        color: #52ad9c;
+      }
+      td {
+        border-bottom: 1px solid #dadada;
+        padding: 25px 25px 25px 0;
+      }
+      p {
+        display: block;
+        color: #888;
+        margin: 0;
+        padding-left: 25px;
+      }
+      .Yorder > div {
+        padding: 15px 0;
+      }
+
+      .Xorder > div {
+        padding: 15px 0;
+      }
+      .Xorder {
+        margin-top: 15px;
+        height: 400px;
+        padding: 20px;
+        border: 1px solid #dadada;
+        justify-content: center;
+        margin-right: 2%;
+      }
+
+      .button-container {
+        text-align: center;
+      }
+      button {
+        width: 30%;
+        margin-top: 10px;
+        padding: 10px;
+        border: none;
+        border-radius: 30px;
+        background: #43a655;
+        color: #fff;
+        font-size: 15px;
+        font-weight: bold;
+      }
+
+      button:hover {
+        cursor: pointer;
+        background: #428a7d;
+      }
+
+      .profile-info p {
+        margin-bottom: 20px;
+        text-align: right;
+      }
+
+      .profile-info label {
+        display: block;
+        border-bottom: 1px solid #000; /* This adds the underline */
+      }
+      .vertical-label {
+        display: flex;
+        flex-direction: column;
+      }
+      .vertical-label span {
+        margin-bottom: 20px; /* Adds space between the label text and the input */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div style="text-align: center">
+        <img src="images/LOGO_HITAM.png" width="70%" alt="" />
+      </div>
+      <div class="title mt-5 mb-10">
+        <h2>Formulir Pemesanan</h2>
+      </div>
+      <div class="d-flex">
+        <div class="Xorder">
+          <form id="orderForm" action="/insert" method="post">
+            <div class="profile-info">
+              <label>
+                <span class="fname">Nama<span class="required"></span></span>
+                <p><%= profile.nama %></p>
+              </label>
+              <label>
+                <span>Alamat <span class="required"></span></span>
+                <p><%= profile.alamat %></p>
+              </label>
+              <label>
+                <span>Nomor Telpon <span class="required"></span></span>
+                <p><%= profile.nomor_telepon %></p>
+              </label>
+              <label>
+                <span>Email<span class="required"></span></span>
+                <p><%= profile.email %></p>
+              </label>
+            </div>
+
+            <input
+              type="hidden"
+              value="Bayar"
+              name="statuspembayaran"
+              id="statuspembayaran"
+            />
+            <input
+              type="hidden"
+              value="<%= produk.id %>"
+              name="id_produk"
+              id="id_produk"
+            />
+            <label class="vertical-label">
+              <span>Tanggal Pernikahan<span class="required">*</span></span>
+              <input type="date" name="tanggalacara" id="tanggalacara" />
+            </label>
+          </form>
+        </div>
+
+        <div class="Yorder">
+          <div class="profile-info">
+            <label>
+              <span class="fname"
+                >Paket Pernikahan<span class="required"></span
+              ></span>
+              <p><%= produk.namapaket %></p>
+            </label>
+            <label>
+              <span>Total <span class="required"></span></span>
+              <p><%= formatCurrency(produk.harga) %></p>
+            </label>
+          </div>
+          <!-- <table>
+            <tr>
+              <th colspan="2">Rincian Order</th>
+            </tr>
+            <tr>
+              <label>
+                <span class="fname">Nama<span class="required"></span></span>
+                <p><%= profile.nama %></p>
+              </label>
+              <td>Paket Pernikahan</td>
+              <td><%= produk.namapaket %></td>
+            </tr>
+            <tr>
+              <td>Total</td>
+              <td><%= formatCurrency(produk.harga) %></td>
+            </tr>
+          </table> -->
+          <br />
+          <form
+            onsubmit="document.getElementById('orderForm').submit(); return false;"
+          >
+            <div class="button-container">
+              <button type="submit">Bayar</button>
+            </div>
+          </form>
+        </div>
+        <!-- Yorder -->
+      </div>
+    </div>
+  </body>
+</html>

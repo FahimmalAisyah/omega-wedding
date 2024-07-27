@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head') %>
+  </head>
+
+  <!-- body -->
+  <body class="main-layout">
+    <!-- loader  -->
+    <div class="loader_bg">
+      <div class="loader"><img src="/images/loading.gif" alt="#" /></div>
+    </div>
+    <!-- end loader -->
+    <%- include('partials/nav') %>
+    <!-- Three Cards Row -->
+    <div class="container mt-5">
+      <h1 class="text-center" style="font-size: 70px">PAKET</h1>
+      <h3 class="text-center">
+        Rayakan cinta Anda dengan kemewahan dan keanggunan.
+      </h3>
+      <h3 class="text-center">
+        Paket pernikahan elegan kami mencakup dekorasi indah dan pelayanan
+        terbaik untuk hari istimewa Anda
+      </h3>
+      <br />
+      <br />
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="/resource/paket1.png"
+              class="card-img-top"
+              alt="Card Image 1"
+            />
+            <div class="card-body">
+              <a
+                href="http://localhost:3000/detailpaket?id=1"
+                class="custom-link"
+                >Lihat Detail <i class="fas fa-arrow-right icon-spacing"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="/resource/paket2.png"
+              class="card-img-top"
+              alt="Card Image 2"
+            />
+            <div class="card-body">
+              <a
+                href="http://localhost:3000/detailpaket?id=3"
+                class="custom-link"
+                >Lihat Detail <i class="fas fa-arrow-right icon-spacing"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="/resource/paket3.png"
+              class="card-img-top"
+              alt="Card Image 3"
+            />
+            <div class="card-body">
+              <a
+                href="http://localhost:3000/detailpaket?id=2"
+                class="custom-link"
+                >Lihat Detail <i class="fas fa-arrow-right icon-spacing"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end play -->
+    <div class="container mt-5">
+      <h1 class="text-center" style="font-size: 70px">Tentang Kami</h1>
+      <h3 class="text-center">#IngatWeddingIngatOmega</h3>
+    </div>
+    <!-- about -->
+    <div class="about">
+      <div class="container">
+        <div class="row d_flex">
+          <div class="col-md-5">
+            <div class="titlepage">
+              <h2></h2>
+              <span
+                >Berdasarkan tingginya angka pernikahan di Medan, kami
+                mendedikasikan diri untuk membantu calon pengantin dengan
+                menjalankan perencana dan penyelenggara pernikahan. Kami
+                menyediakan kebutuhan pernikahan secara menyeluruh.</span
+              >
+              <span
+                >Jam terbang kami yang tinggi telah membuktikan bahwa kami
+                adalah tim yang andal dengan kapasitas kreatif yang dapat Anda
+                percaya untuk membuat hari pernikahan Anda tak terlupakan. Tugas
+                kami untuk membuat pernikahan impian Anda menjadi kenyataan, dan
+                menjadi bagian dari hari pernikahan Anda akan menjadi kesenangan
+                bagi kami.</span
+              >
+            </div>
+          </div>
+          <div class="col-md-7">
+            <div class="about_img">
+              <figure><img src="images/about2.png" alt="#" /></figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end about -->
+    <!-- says -->
+    <div class="says">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="titlepage">
+              <h2>Testimoni</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div id="proj" class="carousel slide says_ban" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#proj" data-slide-to="0" class="active"></li>
+                <li data-target="#proj" data-slide-to="1"></li>
+                <li data-target="#proj" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="container">
+                    <div class="carousel-caption relative3">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="readert">
+                            <div class="readert_img text_align_center">
+                              <figure>
+                                <img src="images/testi1.png" alt="#" />
+                              </figure>
+                            </div>
+                            <div class="readert_text">
+                              <h3>Martin & Yosephin</h3>
+                              <p>
+                                "Tim Omega sangat responsif dan mudah diajak
+                                berdiskusi. Mereka selalu memberikan solusi dan
+                                saran yang kreatif untuk setiap tantangan yang
+                                muncul. Kami sangat merasa didukung dan dipahami
+                                selama proses perencanaan."
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="container">
+                    <div class="carousel-caption relative3">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="readert">
+                            <div class="readert_img text_align_center">
+                              <figure>
+                                <img src="images/testi2.png" alt="#" />
+                              </figure>
+                            </div>
+                            <div class="readert_text">
+                              <h3>Ben & Esta</h3>
+                              <p>
+                                "Terima kasih banyak untuk Omega yang telah
+                                membuat hari spesial kami menjadi sangat
+                                berkesan. Kami sangat merekomendasikan jasa
+                                mereka untuk siapa saja yang sedang merencanakan
+                                pernikahan. Mereka benar-benar yang terbaik!"
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="container">
+                    <div class="carousel-caption relative3">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="readert">
+                            <div class="readert_img text_align_center">
+                              <figure>
+                                <img src="images/testi3.png" alt="#" />
+                              </figure>
+                            </div>
+                            <div class="readert_text">
+                              <h3>Haykal & Elfira</h3>
+                              <p>
+                                "Pada hari pernikahan, semuanya berjalan sangat
+                                lancar dan terorganisir. Saya dan pasangan bisa
+                                benar-benar menikmati momen kami tanpa harus
+                                khawatir tentang apa pun. Dekorasi, manajemen
+                                tamu, semuanya ditangani dengan sangat baik."
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a
+                  class="carousel-control-prev"
+                  href="#proj"
+                  role="button"
+                  data-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a
+                  class="carousel-control-next"
+                  href="#proj"
+                  role="button"
+                  data-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end says -->
+
+    <div class="d-flex justify-content-center mt-4">
+      <div class="col-md-3">
+        <a href="index.html">
+          <img class="logo_fooetr" src="images/LOGO_HITAM.png" alt="#"
+        /></a>
+      </div>
+    </div>
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div class="row">
+            <div class="col-md-12">
+              <ul class="lacation">
+                <li>
+                  <i class="fa fa-map-marker" aria-hidden="true"></i> JL. Imam
+                  Bonjol 16 D, Gedung Mandiri, Lantai 3, Madras Hulu, Medan
+                  Polonia, Kota Medan, Sumatera Utara, 20212
+                </li>
+                <li style="display: flex">
+                  <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                  0895613094826
+                </li>
+                <li>
+                  <i class="fab fa-instagram" aria-hidden="true"></i>
+                  @omegamdn
+                </li>
+                <li>
+                  <i class="fab fa-tiktok" aria-hidden="true"></i>
+                  @omegamdn
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  contact -->
+    <div class="contact" id="kontak">
+      <div class="container">
+        <div class="row d_flex">
+          <!--  -->
+          <div class="col-md-12 mt-2">
+            <div class="map_main">
+              <div class="map-responsive">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.0193732556204!2d98.67339887481118!3d3.583024896391139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303131cc7d6b3b1f%3A0xe96ed2b0b0823e8b!2sBank%20Mandiri%20(Persero)%20Tbk.%20PT!5e0!3m2!1sid!2sid!4v1720250323017!5m2!1sid!2sid"
+                  width="600"
+                  height="378"
+                  frameborder="0"
+                  style="border: 0; width: 100%"
+                  allowfullscreen=""
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end contact -->
+    <a
+      href="https://wa.me/6285893633561?text=Hi%20Omega"
+      class="floating"
+      target="_blank"
+    >
+      <i class="fab fa-whatsapp fab-icon"></i>
+    </a>
+    <!--  footer -->
+    <footer>
+      <div class="footer">
+        <div class="copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 offset-md-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- end footer -->
+    <%- include('partials/foot') %>
+  </body>
+</html>

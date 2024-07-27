@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head') %>
+    <style>
+      .transparent-yellow-box {
+        background-color: rgba(
+          197,
+          166,
+          39,
+          0.5
+        ); /* Yellow color with 50% transparency */
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('partials/nav') %>
+    <div class="container mt-5">
+      <h1 class="text-center">Pesanan</h1>
+      <table class="table table-striped mt-4">
+        <thead>
+          <tr>
+            <th>Nama Paket</th>
+            <th>Harga</th>
+            <th>Status Pembayaran</th>
+            <th>Tanggal Acara</th>
+            <th>Tanggal Transaksi</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% data.forEach(item => { %>
+          <tr>
+            <td><%= item.namapaket %></td>
+            <td><%= item.harga %></td>
+            <td><%= item.statuspembayaran %></td>
+            <td><%= item.tanggalacara %></td>
+            <td><%= item.tanggaltransaksi %></td>
+            <td>
+              <a href="https://wa.me/6281228430523?text=Hi%20Qiscus"
+                >Hubungi Info lebih lanjut</a
+              >
+            </td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <%- include('partials/foot') %>
+  </body>
+</html>

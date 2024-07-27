@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head') %>
+  <body class="sb-nav-fixed">
+    <%- include('partials/nav') %>
+    <div id="layoutSidenav">
+      <%- include('partials/sidebar') %>
+      <div id="layoutSidenav_content">
+        <main>
+          <div class="container-fluid px-4">
+            <h1 class="mt-4">Dashboard</h1>
+            <ol class="breadcrumb mb-4">
+              <li class="breadcrumb-item active">Selamat Datang di webiste Omega</li>
+            </ol>
+            <div class="card mb-4">
+              <div class="card-header">
+                  <i class="fas fa-table me-1"></i>
+                  Riwayat Order
+              </div>
+              <div class="card-body">
+                  <table id="datatablesSimple">
+                      <thead>
+                          <tr>
+                              <th>Nama Customer</th>
+                              <th>Alamat</th>
+                              <th>Nomot Telpon Customer</th>
+                              <th>Nama Paket</th>
+                              <th>Harga</th>
+                              <th>Tanggal Acara</th>
+                              <th>Tanggal Bayar</th>
+                              <th>Tanggal Transaksi</th>
+                          </tr>
+                      </thead>
+                      <tfoot>
+                          <tr>
+                              <th>Nama Customer</th>
+                              <th>Nama Alamat</th>
+                              <th>Nomot Telpon Customer</th>
+                              <th>Nama Paket</th>
+                              <th>Harga</th>
+                              <th>Nama Paket</th>
+                              <th>Harga</th>
+                              <th>Tanggal Acara</th>
+                              <th>Tanggal Bayar</th>
+                              <th>Tanggal Transaksi</th>
+                              
+                          </tr>
+                      </tfoot>
+                      <tbody>
+                          <% data.forEach(product => { %>
+                          <tr>
+                              <td><%= product.nama %></td>
+                              <td><%=  product.alamat %></td>
+                              <td><a href="https://wa.me/<%=  product.nomor_telepon %>?text=Hi%20Qiscus"><%=  product.nomor_telepon %></a></td>
+                              <td><%= product.namapaket %></td>
+                              <td><%=  product.harga %></td>
+                              <td><%= product.tanggalacara %></td>
+                              <td><%= product.tanggalbayar %></td>
+                              <td><%= product.tanggaltransaksi %></td>
+                              </td>
+                          </tr>
+                          <% }) %>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+          </div>
+        </main>
+       <%- include('partials/footer')%>
+  </body>
+</html>
